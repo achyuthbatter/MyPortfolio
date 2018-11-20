@@ -25,13 +25,16 @@ hr.light {
 }
 
 a {
-  color: #F05F40;
+  color: #333;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a:hover {
-  color: #f05f40;
+  color: #333;
+}
+.linkedin{
+    color: royalblue;
 }
 
 span,
