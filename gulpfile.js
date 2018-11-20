@@ -16,7 +16,9 @@ var banner = ['/*!\n',
   ' */\n',
   '\n'
 ].join('');
-
+gulp.task('build',function(){
+    
+});
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
 
