@@ -1,0 +1,31 @@
+header{
+    text-align: center;
+}
+h2{
+    color: white;
+}
+.jumbotron{
+     background-color: #a2292e;
+}
+#charimage{
+    visibility: hidden;
+}
+header img{
+    width: 10%;
+    height: 10%;
+}
+nav{
+    background: #a2292e;
+}
+ nav a{
+    color: black;
+}
+.navbar-toggler{
+    z-index: 1;
+}
+.div{
+    display: none;
+}
+#filter{
+    display: none;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Find the Penguins</title>
+        <meta charset="utf-8">
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <div id="title"></div>
+        </header>
+        <main id="gameholder">
+            <div id="one">
+                <div id="penguin1" class="penguin">
+                    <img src="images/penguin_1.png" id="img1">
+                </div>
+                <div id="penguin2" class="penguin">
+                    <img src="images/penguin_2.png" id="img2">
+                </div>
+                <div id="penguin3" class="penguin">
+                    <img src="images/penguin_3.png" id="img3">
+                </div>
+                <div id="penguin4" class= "penguin">
+                    <img src="images/penguin_4.png" id="img4">
+                </div>
+                <div id="penguin5" class="penguin">
+                    <img src="images/penguin_5.png" id="img5">
+                </div>
+                <div id="penguin6" class="penguin">
+                    <img src="images/penguin_6.png" id="img6">
+                </div>
+                <div id="penguin7" class="penguin">
+                    <img src="images/penguin_7.png" id="img7">
+                </div>
+                <div id="penguin8" class="penguin">
+                    <img src="images/penguin_8.png" id="img8">
+                </div>
+                <div id="yeti">
+                    <img src="images/yeti.png" id="img9">
+                </div>
+            </div>
+            <div id="alert" class="alertbox">
+                <div class ="alertcontent">
+                    <span class="exit">&times;</span>
+                        <p>Oops...Yeti showed up Game Over...Try Again</p>
+                        <a id ="button">New Game</a>
+                </div>
+            </div>
+        </main>
+        <aside class="scoreboard">
+            <div id="score">
+                Score<input type="text" id="count" placeholder="0" readonly/>
+            </div>
+            <div id = "highscore">
+                High Score<input type="text" id="count1" placeholder="0" readonly/>
+            </div>
+        </aside>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

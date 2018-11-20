@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Character</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="comics.html">Comics</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="jumbotron">
+        <img src="images/Marvel-Logo.png" alt="Logo" />
+        <h2>Marvel Cinematic Universe</h2>
+    </header>
+    <div class="container">
+        <div ng-app="mycomicApp" ng-controller="comicCtrl">
+            <form class="form-horizontal" ng-submit="comicSearch(Form.$valid)" name="Form" novalidate>
+                <div class="col-md-4 offset-md-3">
+                    <div class="form-group">
+                        <label>Enter Comic Name</label>
+                        <input type="text" class="form-control" ng-model="txtcomic" required><br/>
+                        <div id="filter">
+                            <label>Filter Limit</label>
+                            <input type="radio" name="rdo" id="filteredListfull" checked="true" value="Full">Default
+                            <input type="radio" name="rdo" id="filteredListtwo" value="byTwo">By 2
+                            <input type="radio" name="rdo" id="filteredListfour" value="byFour">By 4
+                        </div>
+                        <input type="submit" id="sub" value="Ready to Know" class="btn btn-primary btn-block">
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-2">
+                    <div class="form-group">
+                        <strong><h3> {{ searchHeader }} </h3></strong>
+                        <br/>
+                        <strong><h4> {{display }} </h4></strong>
+                        <br/>
+                        <div id="Fetch" ng-repeat="result in ComicData.data.results | filter:{ title: txtcomic}">
+                            <p> {{ result.title }} <br/> {{ result.description}} </p>
+                            <img class="align-contents-self" ng-src="{{ result.thumbnail.path }}/landscape_xlarge.{{ result.thumbnail.extension }}" alt="Cover" />
+                            <hr/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="comics.js"></script>
+</html>
