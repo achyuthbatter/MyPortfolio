@@ -4,7 +4,7 @@ app.controller('marvelCtrl', function($scope, $http) {
     $scope.submitSearch = function (isValid){
         $scope.searchHeader = "";
         if (isValid) {
-            $scope.charsearch = "http://gateway.marvel.com/v1/public/characters?name="+$scope.textname+"&ts=1&apikey=2c3a73ffebee26ccf1f96d59cb058be8&hash=d56926dc1e566addca3cd9f67a881ade";
+            $scope.charsearch = "https://gateway.marvel.com/v1/public/characters?name="+$scope.textname+"&ts=1&apikey=2c3a73ffebee26ccf1f96d59cb058be8&hash=d56926dc1e566addca3cd9f67a881ade";
             $http.get($scope.charsearch).then(function (response) {
                 $scope.searchData = response.data;
                 console.log($scope.searchData);
