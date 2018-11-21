@@ -355,6 +355,30 @@ header.masthead p {
     justify-content: center;
     font-size: 16px;
 }
+#pagination nav {
+    width: 60%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+}
+#pagination nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#pagination a {
+    color: #333;
+    padding: 0px 8px;
+    text-decoration: none;
+}
+.active a, #pagination a :hover{
+    color: #333 !important;
+    border-bottom: 3px solid #333;
+}
+.contents p{
+    font-size: 19px;
+}
 .portfolio-box {
   position: relative;
   display: block;
@@ -385,9 +409,7 @@ header.masthead p {
   text-align: center;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-link {
+.project-link {
   padding: 0 15px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -415,7 +437,7 @@ header.masthead p {
 
 .project-link .link{
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-    color: #fff;
+    color: #333;
 }
 
 @media (min-width: 768px) {

@@ -73,20 +73,24 @@
     scale: 0
   });
 
-//  // Magnific popup calls
-//  $('.popup-gallery').magnificPopup({
-//    delegate: 'a',
-//    type: 'image',
-//    tLoading: 'Loading image #%curr%...',
-//    mainClass: 'mfp-img-mobile',
-//    gallery: {
-//      enabled: true,
-//      navigateByImgClick: true,
-//      preload: [0, 1]
-//    },
-//    image: {
-//      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-//    }
-//  });
-
+var no_of_contents = $(".contents").length;
+var showPage = function(pagination){
+    if(pagination < 0 || pagination >= no_of_contents )
+        return;
+        $(".contents").hide().eq(pagination).show();
+        $("#pagination li").removeClass("active").eq(pagination).addClass("active");   
+} 
+$("#pagination ul a").click(function(e) {
+      e.preventDefault();
+      showPage($(this).parent().index());
+});
+$(".prev").click(function() {
+    showPage($("#pagination ul .active").index() - 1);
+});
+    
+$(".next").click(function() {
+    showPage($("#pagination ul .active").index() + 1);
+});    
+showPage(0)
+    
 })(jQuery); // End of use strict
